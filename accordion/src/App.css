@@ -1,0 +1,11 @@
+.question{
+width:550px;
+background-color: antiquewhite;
+margin-bottom: 30px;
+}
+.question header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
