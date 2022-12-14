@@ -15,7 +15,6 @@ const getLocalStorage = () => {
 }
 function App() {
   const [name, setName] = useState("");
-  const [sas, sasSet] = useState("");
   
   const [list, setList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
