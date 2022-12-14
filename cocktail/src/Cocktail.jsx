@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Cocktail = ({ id, name, image, info, glass }) => {
   return (
@@ -8,6 +9,7 @@ const Cocktail = ({ id, name, image, info, glass }) => {
         <h3>{name}</h3>
         <h4>{glass}</h4>
         <h5>{info}</h5>
+        <Link to={`/cocktail/${id}`}></Link>
       </div>
     </div>
   );

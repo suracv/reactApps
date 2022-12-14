@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useGlobalContext } from "./context";
 
 const SearchForm = () => {
-  const searchValue = React.useReducer("");
+  const searchValue = useReducer("");
   const { setSearchTerm } = useGlobalContext();
   const searchContainer = () => {
     setSearchTerm(searchValue.current.value);
