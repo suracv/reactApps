@@ -1,0 +1,75 @@
+.followers {
+  width: 90vw;
+  margin: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 4rem;
+}
+.btn-container {
+  margin: 0 auto;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.next-btn,
+.prev-btn {
+  background: transparent;
+  border-color: transparent;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  letter-spacing: var(--spacing);
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn {
+  padding: 0.35rem 0.75rem;
+  letter-spacing: 1.6px;
+  font-size: 0.75rem;
+  color: #063251;
+  border-radius: 0.75rem;
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 5px;
+  background: #cdd0d4;
+}
+
+.activebtn {
+  color: #fff;
+  background: #063251;
+}
+.card {
+  background: #fff;
+  background: var(--clr-white);
+  border-radius: 0.75rem;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+  box-shadow: var(--light-shadow);
+  padding: 2rem 3.5rem;
+  text-align: center;
+}
+.card img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.card {
+  margin-bottom: 1.5rem;
+  color: #063251;
+}
