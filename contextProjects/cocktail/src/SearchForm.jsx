@@ -3,6 +3,7 @@ import { useGlobalContext } from "./context";
 
 const SearchForm = () => {
   const searchValue = useReducer("");
+  console.log(useReducer);
   const { setSearchTerm } = useGlobalContext();
   const searchContainer = () => {
     setSearchTerm(searchValue.current.value);

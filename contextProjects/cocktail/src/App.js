@@ -4,9 +4,10 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Navbar from "./Navbar.jsx";
 import SingleCocktail from "./pages/SingleCocktail.jsx";
+import { AppProvider } from "./context";
 function App() {
   return (
-    <div>
+    <AppProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -15,7 +16,7 @@ function App() {
           <Route path="/cocktail/:id" element={<SingleCocktail />} />
         </Routes>
       </Router>
-    </div>
+    </AppProvider>
   );
 }
 
