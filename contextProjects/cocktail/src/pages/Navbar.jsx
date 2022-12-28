@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import linksJson from "./linksJson";
+import linksJson from "../linksJson";
 
 const Navbar = () => {
   return (

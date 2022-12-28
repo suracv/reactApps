@@ -1,11 +1,16 @@
-import React, { useReducer } from "react";
-import { useGlobalContext } from "./context";
+import React from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { useAppContext } from "./context/AppContext";
 
 const SearchForm = () => {
-  const searchValue = useReducer("");
-  console.log(useReducer);
-  const { setSearchTerm } = useGlobalContext();
-  const searchContainer = () => {
+  const { setSearchTerm } = useAppContext();
+  const searchValue = useRef("");
+
+  useEffect(() => {
+    searchValue.current.focus();
+  }, []);
+  const searchCocktail = () => {
     setSearchTerm(searchValue.current.value);
   };
   const handleSubmit = (e) => {
@@ -13,7 +18,7 @@ const SearchForm = () => {
   };
   return (
     <form className="search" onSubmit={handleSubmit}>
-      <input type="text" onChange={searchContainer} ref={searchValue} />
+      <input type="text" onChange={searchCocktail} ref={searchValue} />
     </form>
   );
 };

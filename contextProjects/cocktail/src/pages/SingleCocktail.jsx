@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import Loading from "../Loading";
 
 const SingleCocktail = () => {
-  const url = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+  const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -15,8 +15,9 @@ const SingleCocktail = () => {
     setLoading(true);
     async function getCocktail() {
       try {
-        const response = await fetch(`${url} ${id}`);
+        const response = await fetch(`${url}${id}`);
         const data = await response.json();
+        console.log(data);
         if (data.drinks) {
           const {
             strDrink: name,
@@ -26,13 +27,13 @@ const SingleCocktail = () => {
             strGlass: glass,
             strInstructions: instructions,
             strIngredient1,
-            strIngredien2,
+            strIngredient2,
             strIngredient3,
             strIngredient4,
           } = data.drinks[0];
           const ingredients = [
             strIngredient1,
-            strIngredien2,
+            strIngredient2,
             strIngredient3,
             strIngredient4,
           ];

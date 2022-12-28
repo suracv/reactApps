@@ -1,8 +1,8 @@
 import React from "react";
-import { useGlobalContext } from "../context/context";
+import { useAppContext } from "../context/context";
 
 const Stories = () => {
-  const { isLoading, hits } = useGlobalContext();
+  const { isLoading, hits, removeStory } = useAppContext();
   if (isLoading) {
     return <div>loading</div>;
   }
@@ -21,7 +21,12 @@ const Stories = () => {
               <a href={url} className="read-link" target="_blank">
                 read more
               </a>
-              <button className="remove-btn">remove</button>
+              <button
+                className="remove-btn"
+                onClick={() => removeStory(objectID)}
+              >
+                remove
+              </button>
             </div>
           </article>
         );
