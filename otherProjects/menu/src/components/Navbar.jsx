@@ -10,7 +10,7 @@ const Navbar = () => {
             <NavbarItem
               items={menu}
               key={index}
-              depthLevel={depthLevel}
+             depthLevel={depthLevel}
             />
           );
         })}
