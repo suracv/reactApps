@@ -1,12 +1,12 @@
-import Header from './Header';
-import Outlet from '../pages/Outlet';
+import Header from "./Header";
+import Outlet from "../pages/Outlet";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="main">
       <Header />
       <div className="content">
-        <Outlet/>
+        <Outlet />
       </div>
     </div>
   );
