@@ -187,7 +187,7 @@ text-decoration: none;
 .other-submenu.active .sub-menus2{
   display: block;
 }
-.other-submenu.active .sub-menus2__item{
+.sub-menus2__item.active{
   color: red;
 }
 
@@ -207,4 +207,8 @@ display: block;
   margin-left: 25px !important;
   transition:  .5s;
 
+}
+
+.sub-menus__item.active{
+background-color: red;
 }

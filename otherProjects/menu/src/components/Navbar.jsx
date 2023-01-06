@@ -9,10 +9,7 @@ const Navbar = () => {
   useEffect(() => {
     setmenuItems([...items]);
   }, []);
-  const onStopEvent = (e) => {
-    e.stopPropagation();
-    console.log("current target:");
-  };
+
   const handleAddMenuItem = () => {
     setmenuItems([
       ...items,
@@ -38,7 +35,7 @@ const Navbar = () => {
   return (
     <nav>
       <SearchBar />
-      <ul className="menus" onClick={onStopEvent}>
+      <ul className="menus" >
         {menuItems.map((item, index) => {
           return <NavbarItem items={item} key={index} />;
         })}

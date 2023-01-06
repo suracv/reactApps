@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SubmenuItem = ({ submenus, dropdown }) => {
-  const [submenuIndex, setsubmenuIndex] = useState(false);
+const SubmenuItem = ({ submenus }) => {
+  const [submenuIndex, setsubmenuIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setActive] = useState(false);
-
-  const handleClass = () => {
-    setActive(!isActive);
-  };
+  const [subsubmenuIndex, setSubsubmenuIndex] = useState(-1);
 
   const handleClick = (event) => {
     event.stopPropagation();
@@ -18,7 +14,7 @@ const SubmenuItem = ({ submenus, dropdown }) => {
   //  onClick={()=> setsubmenuIndex((prevIndex) => (prevIndex === index ? -1 : index))}
   return (
     <>
-      <ul className={`sub-menus ${dropdown ? "show" : ""}`}>
+      <ul className="sub-menus">
         {submenus.map((sub, index) => {
           return (
             <li key={index}>
@@ -29,35 +25,34 @@ const SubmenuItem = ({ submenus, dropdown }) => {
                   }`}
                   onClick={() => setIsOpen(!isOpen)}
                 >
-                  <Link
+                  <ul
                     className="sub-menus__item"
                     onClick={() => setsubmenuIndex(index)}
                   >
                     {sub.title}
                     {isOpen && (
                       <div className="sub-menus2" onClick={handleClick}>
-                        {sub.submenu.map((a) => (
+                        {sub.submenu.map((a, index) => (
                           <Link
                             to={a.url}
                             key={a.id}
-                            className={`sub-menus2__item ${
-                              isActive ? "activem" : null
-                            } `}
-                            onClick={handleClass}
+                            className={`sub-menus2__item  ${
+                              index === subsubmenuIndex ? "active" : null
+                            }`}
                           >
-                            {a.title}
+                            <div onClick={() => setSubsubmenuIndex(index)}>
+                              {a.title}
+                            </div>
                           </Link>
                         ))}
                       </div>
                     )}
-                  </Link>
+                  </ul>
                 </div>
               ) : (
-                <div>
-                  <Link to={sub.url} className="sub-menus__item">
-                    {sub.title}sss
-                  </Link>
-                </div>
+                <Link to={sub.url}>
+                  <div className="sub-menus__item">{sub.title}sss</div>
+                </Link>
               )}
             </li>
           );
