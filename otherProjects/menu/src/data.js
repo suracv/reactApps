@@ -18,6 +18,7 @@ export const items = [
   {
     id: 2,
     title: "Raporlar",
+    
     submenu: [
       {
         title: "ENTG Sıkça Sorulan Sorular",
@@ -101,7 +102,7 @@ export const items = [
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
-            url: "log",
+            url: "test",
           },
           {
             title: "test",

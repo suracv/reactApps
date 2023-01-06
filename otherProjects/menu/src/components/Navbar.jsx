@@ -1,19 +1,50 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { items } from "../data";
 import NavbarItem from "./NavbarItem";
 import SearchBar from "./SearchBar";
 const Navbar = () => {
+  const [menuItems, setmenuItems] = useState([]);
+
+  useEffect(() => {
+    setmenuItems([...items]);
+  }, []);
+  const onStopEvent = (e) => {
+    e.stopPropagation();
+    console.log("current target:");
+  };
+  const handleAddMenuItem = () => {
+    setmenuItems([
+      ...items,
+      {
+        id: 56,
+        title: "Servisler22",
+        submenu: [
+          {
+            title: "ENTG Sıkça Sorulan Sorular",
+            url: "entg",
+          },
+          {
+            title: "Ip-Eşleştirme",
+            url: "ip-eslestirme",
+          },
+        ],
+      },
+    ]);
+
+    console.log("sub");
+  };
+
   return (
     <nav>
       <SearchBar />
-
-      <ul className="menus">
-        {items.map((menu, index) => {
-          const depthLevel = 0;
-          return (
-            <NavbarItem items={menu} key={index} depthLevel={depthLevel} />
-          );
+      <ul className="menus" onClick={onStopEvent}>
+        {menuItems.map((item, index) => {
+          return <NavbarItem items={item} key={index} />;
         })}
       </ul>
+
+      <button onClick={() => handleAddMenuItem()}>ekle</button>
     </nav>
   );
 };
