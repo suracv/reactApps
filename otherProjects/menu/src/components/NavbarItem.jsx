@@ -2,34 +2,20 @@ import { useState, useEffect } from "react";
 import SubmenuItem from "./SubmenuItem";
 
 const NavbarItem = ({ items, index }) => {
-
-  const [menuIndex, setmenuIndex] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setActive] = useState(false);
-
-  const onStopEvent = (e) => {
-    e.stopPropagation();
-    console.log("current target:");
-  };
-
-  const handleMenuIndex = () => {
-    setmenuIndex(index);
-    setActive(!isActive);
-  };
-
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <li
-      className={`menu-items 
-    
-    ${index === menuIndex ? "active" : null}`}
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <button className="menu-items__title" onClick={handleMenuIndex}>
+    <li className={`menu-items ${isOpen ? "active" : null}`}>
+      <button
+        className="menu-items__title"
+        aria-expanded={isOpen ? "true" : "false"}
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
         <h3> {items.title}</h3>
         <span className="arrow" />
       </button>
-      <SubmenuItem submenus={items.submenu} />
+      <SubmenuItem submenus={items.submenu} searchTerm={searchTerm} />
     </li>
   );
 };

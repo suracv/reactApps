@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SubmenuItem = ({ submenus }) => {
-  const [submenuIndex, setsubmenuIndex] = useState(0);
+const SubmenuItem = ({ submenus, items, searchTerm }) => {
+  const [submenuIndex, setsubmenuIndex] = useState(-1);
   const [isOpen, setIsOpen] = useState(false);
   const [subsubmenuIndex, setSubsubmenuIndex] = useState(-1);
 
@@ -17,7 +17,7 @@ const SubmenuItem = ({ submenus }) => {
       <ul className="sub-menus">
         {submenus.map((sub, index) => {
           return (
-            <li key={index}>
+            <li key={index} onClick={() => setIsOpen(!isOpen)}>
               {sub.submenu ? (
                 <div
                   className={`other-submenu ${
@@ -50,8 +50,15 @@ const SubmenuItem = ({ submenus }) => {
                   </ul>
                 </div>
               ) : (
-                <Link to={sub.url}>
-                  <div className="sub-menus__item">{sub.title}sss</div>
+                <Link
+                  to={sub.url}
+                  className={`sub-menus__item  ${
+                    sub.title.toLowerCase().includes(searchTerm.toLowerCase())
+                      ? "highlight"
+                      : ""
+                  }`}
+                >
+                  <div onClick={() => setsubmenuIndex(index)}>{sub.title}</div>
                 </Link>
               )}
             </li>

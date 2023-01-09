@@ -18,7 +18,7 @@ export const items = [
   {
     id: 2,
     title: "Raporlar",
-    
+
     submenu: [
       {
         title: "ENTG Sıkça Sorulan Sorular",
@@ -74,7 +74,6 @@ export const items = [
     submenu: [
       {
         title: "Dağıtım",
-        url: "dagitim",
         submenu: [
           {
             title: "Log",
@@ -84,7 +83,6 @@ export const items = [
       },
       {
         title: "BTD",
-        url: "btd",
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -98,7 +96,6 @@ export const items = [
       },
       {
         title: "Diğer",
-        url: "diğer",
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -112,7 +109,6 @@ export const items = [
       },
       {
         title: "Kanal",
-        url: "kanal",
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -126,7 +122,6 @@ export const items = [
       },
       {
         title: "Müşteri Şebeke",
-        url: "musteri",
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -140,7 +135,6 @@ export const items = [
       },
       {
         title: "SAP",
-        url: "musteri",
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",

@@ -1,11 +1,15 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { items } from "../data";
 import NavbarItem from "./NavbarItem";
 import SearchBar from "./SearchBar";
-const Navbar = () => {
-  const [menuItems, setmenuItems] = useState([]);
 
+const Navbar = () => {
+  const [menuItems, setmenuItems] = useState(items);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
   useEffect(() => {
     setmenuItems([...items]);
   }, []);
@@ -34,13 +38,12 @@ const Navbar = () => {
 
   return (
     <nav>
-      <SearchBar />
-      <ul className="menus" >
-        {menuItems.map((item, index) => {
-          return <NavbarItem items={item} key={index} />;
-        })}
+      <SearchBar handleSearch={handleSearch} />
+      <ul className="menus">
+        {menuItems.map((item, index) => (
+          <NavbarItem items={item} key={index} searchTerm={searchTerm} />
+        ))}
       </ul>
-
       <button onClick={() => handleAddMenuItem()}>ekle</button>
     </nav>
   );

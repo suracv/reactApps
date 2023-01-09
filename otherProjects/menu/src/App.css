@@ -44,19 +44,18 @@ header {
   gap: 10px;
   border-radius: 3px;
 }
-.sub-menus{
+.sub-menus {
   list-style: none;
-margin-left: 22px;
+  margin-left: 22px;
 }
 .sub-menus .sub-menus__item {
-opacity: 0.61;
+  opacity: 0.61;
   font-size: 13.5px;
   font-weight: 500;
   line-height: 2.22;
   text-decoration: none;
   text-align: left;
   color: #000;
-
 }
 
 .menu-items .menu-items__title {
@@ -70,9 +69,8 @@ opacity: 0.61;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
-
 }
-.menu-items__title h3{
+.menu-items__title h3 {
   font-size: 17px;
   font-weight: 600;
   font-stretch: normal;
@@ -104,7 +102,6 @@ opacity: 0.61;
   max-width: 216px;
 }
 
-
 .active .arrow::after {
   transform: rotate(225deg);
 }
@@ -127,19 +124,19 @@ opacity: 0.61;
   /* display: none; */
 }
 
-.close-btn{
- width: 25px;
- border: none;
+.close-btn {
+  width: 25px;
+  border: none;
   height: 60px;
   object-fit: contain;
   opacity: 0.5;
   background-color: #fdd301;
   position: absolute;
   left: 250px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.nav-area .logo{
+.nav-area .logo {
   text-decoration: none;
   width: 100%;
   height: 60px;
@@ -151,10 +148,10 @@ opacity: 0.61;
   line-height: 1.23;
   color: #000;
 }
-.nav-area .logo span{
+.nav-area .logo span {
   font-weight: 600;
 }
-.search input{
+.search input {
   width: 100%;
   height: 40px;
   margin: 0 2px 18px 0;
@@ -169,46 +166,49 @@ opacity: 0.61;
   color: #ababab;
   border: none;
 }
-.sub-menus, .sub-menus2{
+.sub-menus,
+.sub-menus2 {
   display: none;
   margin-left: 22px;
 }
-.sub-menus2__item{
+.sub-menus2__item {
   opacity: 0.61;
-    font-size: 13.5px;
-    font-weight: 500;
-    line-height: 2.22;
-text-decoration: none;
-    color: #000;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 2.22;
+  text-decoration: none;
+  color: #000;
 }
-.menu-items.active .sub-menus{
+.menu-items.active .sub-menus {
   display: block;
 }
-.other-submenu.active .sub-menus2{
+.other-submenu.active .sub-menus2 {
   display: block;
 }
-.sub-menus2__item.active{
+.sub-menus2__item.active {
   color: red;
 }
 
-.header.active{
-display: block;
+.header.active {
+  display: block;
 }
-.header{
-  transition:  .3s;
-
+.header {
+  transition: 0.3s;
 }
-.close-btn.open{
+.close-btn.open {
   left: 0 !important;
-  transition:  .5s;
-
+  transition: 0.5s;
 }
-.close-btn.open  .outlet, .content{
+.close-btn.open .outlet,
+.content {
   margin-left: 25px !important;
-  transition:  .5s;
-
+  transition: 0.5s;
 }
 
-.sub-menus__item.active{
-background-color: red;
+.sub-menus__item.active {
+  color: red;
+}
+.highlight {
+  color: red !important;
+  background-color: red !important;
 }

@@ -1,28 +1,24 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
-import { Form, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
-const SearchBar = () => {
-  const [keyword, setKeyword] = useState("");
-  const navigate = useNavigate();
-  const searchValue = useRef("");
+const SearchBar = ({ handleSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    searchValue.current.focus();
-  }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (keyword.trim()) {
-      navigate(`/search/${keyword}`);
-    } else {
-      navigate("/search");
-    }
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
+
   return (
-    <form className="search" onSubmit={handleSubmit}>
-      <input type="text" ref={searchValue} placeholder="Arama" />
-    </form>
+    <input
+      type="text"
+      placeholder="Search..."
+      value={searchTerm}
+      onChange={handleSearchChange}
+      onKeyDown={(event) => {
+        if (event.key === "Enter") {
+          handleSearch(searchTerm);
+        }
+      }}
+    />
   );
 };
 
