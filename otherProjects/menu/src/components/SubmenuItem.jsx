@@ -13,59 +13,57 @@ const SubmenuItem = ({ submenus, items, searchTerm }) => {
   //functıon state duzgun mu dummy dtaa subsubmenu buttonlar ekle
   //  onClick={()=> setsubmenuIndex((prevIndex) => (prevIndex === index ? -1 : index))}
   return (
-    <>
-      <ul className="sub-menus">
-        {submenus.map((sub, index) => {
-          return (
-            <li key={index} onClick={() => setIsOpen(!isOpen)}>
-              {sub.submenu ? (
-                <div
-                  className={`other-submenu ${
-                    index === submenuIndex ? "active" : null
-                  }`}
-                  onClick={() => setIsOpen(!isOpen)}
+    <ul className="sub-menus">
+      {submenus.map((sub, index) => {
+        return (
+          <li key={index} onClick={() => setIsOpen(!isOpen)}>
+            {sub.submenu ? (
+              <div
+                className={`other-submenu ${
+                  index === submenuIndex ? "active" : null
+                }`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <ul
+                  className="sub-menus__item"
+                  onClick={() => setsubmenuIndex(index)}
                 >
-                  <ul
-                    className="sub-menus__item"
-                    onClick={() => setsubmenuIndex(index)}
-                  >
-                    {sub.title}
-                    {isOpen && (
-                      <div className="sub-menus2" onClick={handleClick}>
-                        {sub.submenu.map((a, index) => (
-                          <Link
-                            to={a.url}
-                            key={a.id}
-                            className={`sub-menus2__item  ${
-                              index === subsubmenuIndex ? "active" : null
-                            }`}
-                          >
-                            <div onClick={() => setSubsubmenuIndex(index)}>
-                              {a.title}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </ul>
-                </div>
-              ) : (
-                <Link
-                  to={sub.url}
-                  className={`sub-menus__item  ${
-                    sub.title.toLowerCase().includes(searchTerm.toLowerCase())
-                      ? "highlight"
-                      : ""
-                  }`}
-                >
-                  <div onClick={() => setsubmenuIndex(index)}>{sub.title}</div>
-                </Link>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </>
+                  {sub.title}
+                  {isOpen && (
+                    <div className="sub-menus2" onClick={handleClick}>
+                      {sub.submenu.map((a, index) => (
+                        <Link
+                          to={a.url}
+                          key={a.id}
+                          className={`sub-menus2__item  ${
+                            index === subsubmenuIndex ? "active" : null
+                          }`}
+                        >
+                          <div onClick={() => setSubsubmenuIndex(index)}>
+                            {a.title}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </ul>
+              </div>
+            ) : (
+              <Link
+                to={sub.url}
+                className={`sub-menus__item  ${
+                  sub.title.toLowerCase().includes(searchTerm.toLowerCase())
+                    ? "highlight"
+                    : ""
+                }`}
+              >
+                <div onClick={() => setsubmenuIndex(index)}>{sub.title}</div>
+              </Link>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

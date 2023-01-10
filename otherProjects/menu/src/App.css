@@ -44,11 +44,11 @@ header {
   gap: 10px;
   border-radius: 3px;
 }
-.sub-menus {
+.sub-menu {
   list-style: none;
   margin-left: 22px;
 }
-.sub-menus .sub-menus__item {
+.sub-menu__item {
   opacity: 0.61;
   font-size: 13.5px;
   font-weight: 500;
@@ -151,7 +151,7 @@ header {
 .nav-area .logo span {
   font-weight: 600;
 }
-.search input {
+.search {
   width: 100%;
   height: 40px;
   margin: 0 2px 18px 0;
@@ -167,17 +167,18 @@ header {
   border: none;
 }
 .sub-menus,
-.sub-menus2 {
-  display: none;
+.sub-menu2 {
   margin-left: 22px;
+  display: flex;
+  flex-direction: column;
 }
-.sub-menus2__item {
-  opacity: 0.61;
+.sub-menu2__item {
   font-size: 13.5px;
   font-weight: 500;
   line-height: 2.22;
   text-decoration: none;
   color: #000;
+  border-radius: 3px;
 }
 .menu-items.active .sub-menus {
   display: block;
@@ -211,4 +212,17 @@ header {
 .highlight {
   color: red !important;
   background-color: red !important;
+}
+
+.sub-menu__item div {
+  display: flex;
+  align-items: center;
+}
+.sub-menu__item div .arrow::after {
+  transform: rotate(225deg);
+  margin-left: 10px;
+}
+.sub-menu2__item.active {
+  background-color: #fdca00;
+  padding: 0 10px;
 }

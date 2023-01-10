@@ -9,6 +9,7 @@ const SearchBar = ({ handleSearch }) => {
 
   return (
     <input
+      className="search"
       type="text"
       placeholder="Search..."
       value={searchTerm}

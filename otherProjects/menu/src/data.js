@@ -14,7 +14,6 @@ export const items = [
       },
     ],
   },
-
   {
     id: 2,
     title: "Raporlar",
@@ -74,6 +73,8 @@ export const items = [
     submenu: [
       {
         title: "Dağıtım",
+        id: 1,
+
         submenu: [
           {
             title: "Log",
@@ -83,6 +84,8 @@ export const items = [
       },
       {
         title: "BTD",
+        id: 2,
+
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -96,11 +99,9 @@ export const items = [
       },
       {
         title: "Diğer",
+        id: 3,
+
         submenu: [
-          {
-            title: "D_AKTIF_DIZIN HIZMETI",
-            url: "test",
-          },
           {
             title: "test",
             url: "test",
@@ -109,19 +110,23 @@ export const items = [
       },
       {
         title: "Kanal",
+        id: 4,
+
         submenu: [
           {
-            title: "D_AKTIF_DIZIN HIZMETI",
+            title: "log",
             url: "log",
           },
           {
-            title: "test",
-            url: "test",
+            title: "log",
+            url: "log",
           },
         ],
       },
       {
         title: "Müşteri Şebeke",
+        id: 5,
+
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
@@ -135,6 +140,8 @@ export const items = [
       },
       {
         title: "SAP",
+        id: 6,
+
         submenu: [
           {
             title: "D_AKTIF_DIZIN HIZMETI",
